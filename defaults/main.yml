@@ -1,0 +1,9 @@
+---
+# jenkins installed plugins
+jip_cli_hostname: 'localhost'
+jip_cli_jar_location: '/var/cache/jenkins/war/WEB-INF/jenkins-cli.jar'
+jip_http_port: 8080
+jip_application_context: ''
+jip_jenkins_system_user: 'jenkins'
+
+jip_installed_plugins_file: "{{ playbook_dir }}/group_vars/all/99_installed_plugins.yml"
