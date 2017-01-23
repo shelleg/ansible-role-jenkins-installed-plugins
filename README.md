@@ -1,5 +1,5 @@
-Ansible Role Juseppe
-====================
+Ansible Role Jenkins Installed Plugins
+======================================
 
 Get list of installed plugins with versions in yml-file
 
@@ -10,13 +10,14 @@ Requirements
 Role Variables
 --------------
 
-* `test_ver: test_value`
+* `jip_cli_hostname: 'localhost'`
+* `jip_cli_jar_location: '/var/cache/jenkins/war/WEB-INF/jenkins-cli.jar'`
+* `jip_http_port: 8080`
+* `jip_application_context: ''`
+* `jip_jenkins_system_user: 'jenkins'`
+* `jip_installed_plugins_file: "{{ playbook_dir }}/data_from_jenkins/installed_plugins.yml"`
 
-```python
-juseppe_plugins:
-  - { name: "credentials-binding",  version: "1.10" }
-  ... 
-```  
+
 Dependencies
 ------------
 
@@ -28,7 +29,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - role: juesppe
+         - role: ansible-role-jenkins-installed-plugins
 
 License
 -------
