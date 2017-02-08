@@ -6,4 +6,4 @@ jip_http_port: 8080
 jip_application_context: ''
 jip_jenkins_system_user: 'jenkins'
 
-jip_installed_plugins_file: "{{ playbook_dir }}/group_vars/all/99_installed_plugins.yml"
+jip_installed_plugins_file: "{{ playbook_dir }}/group_vars/all/10_installed_plugins.yml"

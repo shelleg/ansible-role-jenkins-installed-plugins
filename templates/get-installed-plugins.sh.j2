@@ -2,4 +2,4 @@
 echo "installed_plugins:"
 java -jar {{ jip_cli_jar_location }} \
     -s http://{{ jip_cli_hostname }}:{{ jip_http_port }}{{ jip_application_context }}/ \
-    list-plugins | awk '{print " - { name: \""$1"\", ", "version: \""$NF"\" }"}'
+    list-plugins | awk '{print " - { name: \""$1"\", ", "version: \""$NF"\" }"}' | sort
