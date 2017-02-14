@@ -1,0 +1,25 @@
+---
+- name: "Set name of the script (get-installed-plugins.sh)"
+  set_fact:
+    script_name: "get-installed-plugins.sh"
+
+- template:
+    src: "{{ script_name }}.j2"
+    dest: "/tmp/{{ script_name }}"
+    mode: 0755
+  become: true
+  become_user: "{{ jexp_jenkins_system_user }}"
+
+- shell: "/tmp/{{ script_name }}"
+  register: result
+  become: true
+  become_user: "{{ jexp_jenkins_system_user }}"
+
+- debug: var=result.stdout
+
+- local_action: copy dest="{{ jexp_installed_plugins_file }}" content="{{ result.stdout }}"
+  become: false
+
+- debug: var=playbook_dir
+
+

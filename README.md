@@ -1,7 +1,10 @@
-Ansible Role Jenkins Installed Plugins
-======================================
+Ansible Role Jenkins Export
+===========================
 
-Get list of installed plugins with versions in yml-file
+- Get list of installed plugins with versions in yml-file
+- Copy main config.xml
+- Copy all jobs config.xml-s
+- Copy all plugins configuration xml files
 
 Requirements
 ------------
@@ -10,12 +13,12 @@ Requirements
 Role Variables
 --------------
 
-* `jip_cli_hostname: 'localhost'`
-* `jip_cli_jar_location: '/var/cache/jenkins/war/WEB-INF/jenkins-cli.jar'`
-* `jip_http_port: 8080`
-* `jip_application_context: ''`
-* `jip_jenkins_system_user: 'jenkins'`
-* `jip_installed_plugins_file: "{{ playbook_dir }}/data_from_jenkins/installed_plugins.yml"`
+* `jexp_cli_hostname: 'localhost'`
+* `jexp_cli_jar_location: '/var/cache/jenkins/war/WEB-INF/jenkins-cli.jar'`
+* `jexp_http_port: 8080`
+* `jexp_application_context: ''`
+* `jexp_jenkins_system_user: 'jenkins'`
+* `jexp_installed_plugins_file: "{{ playbook_dir }}/data_from_jenkins/installed_plugins.yml"`
 
 
 Dependencies
@@ -29,7 +32,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - role: ansible-role-jenkins-installed-plugins
+         - role: ansible-role-jenkins-export
 
 License
 -------

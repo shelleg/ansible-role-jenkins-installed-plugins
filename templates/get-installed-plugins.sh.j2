@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "installed_plugins:"
-java -jar {{ jip_cli_jar_location }} \
-    -s http://{{ jip_cli_hostname }}:{{ jip_http_port }}{{ jip_application_context }}/ \
+java -jar {{ jexp_cli_jar_location }} \
+    -s http://{{ jexp_cli_hostname }}:{{ jexp_http_port }}{{ jexp_application_context }}/ \
     list-plugins | sort | sed 's/(.*)$//g' | awk '{print " - { name: \""$1"\", ", "version: \""$NF"\" }"}'
